@@ -1,8 +1,16 @@
 function calculateWords(chapterOfABook) {
+  let arrayOfWords = chapterOfABook.split(" ");
   const wordCount = {};
+  
 
   // Write your code in here
-
+  arrayOfWords.forEach((word) => {
+    if (wordCount.hasOwnProperty(word)) {
+      wordCount[word]++;
+    } else {
+      wordCount[word] = 1;
+    }
+  });
   return wordCount;
 }
 
