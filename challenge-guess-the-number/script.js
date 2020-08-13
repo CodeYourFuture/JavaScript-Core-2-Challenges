@@ -22,8 +22,8 @@ function guessNumber() {
     message.textContent = "Please enter a number between 1 and 100";
     return;
   }
-  console.log(numOfTriesLeft);
-  console.log(randomNumber);
+  // console.log(numOfTriesLeft);
+  // console.log(randomNumber);
   if (numOfTriesLeft <= 7 && numOfTriesLeft > 0) {
     numOfTriesLeft--;
     numOfTriesUsed++;

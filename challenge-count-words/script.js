@@ -1,13 +1,15 @@
-let punctuationRegEx = /[!,.-:’;'—"?“”]/g;
+let punctuationRegEx = /[!,.-:’;'—"?“”\(\)\']/g;
 
 function calculateWords(chapterOfABook) {
   const wordCount = {};
   if (chapterOfABook === "") {
     return wordCount;
   }
-  let noPunctuation = chapterOfABook.replace(punctuationRegEx, "");
-  //console.log(noPunctuation);
-  let arrayOfWords = noPunctuation.split(" ");
+  let noPunctuationAndIgnoreCase = chapterOfABook
+    .replace(punctuationRegEx, "")
+    .toLowerCase();
+  //console.log(noPunctuationAndIgnoreCase);
+  let arrayOfWords = noPunctuationAndIgnoreCase.split(" ");
 
   // Write your code in here
   arrayOfWords.forEach((word) => {
@@ -17,10 +19,21 @@ function calculateWords(chapterOfABook) {
       wordCount[word] = 1;
     }
   });
-  console.log(wordCount);
+  console.log(findMostCommonWord(wordCount));
   return wordCount;
 }
 
+function findMostCommonWord(object) {
+  let maxCount = 0;
+  let maxCountWord = "";
+  for(let word in object) {
+    if (maxCount < object[word]) {
+      maxCount = object[word];
+      maxCountWord = word;
+    }
+  }
+  return `The most common word in the chapter is "${maxCountWord}" and it occurs ${maxCount} times.`;
+}
 calculateWords(getDraculaChapterOne());
 
 /**                            */
