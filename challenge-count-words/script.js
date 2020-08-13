@@ -1,7 +1,13 @@
+let punctuationRegEx = /[!,.-:’;'—"?“”]/g;
+
 function calculateWords(chapterOfABook) {
-  let arrayOfWords = chapterOfABook.split(" ");
   const wordCount = {};
-  
+  if (chapterOfABook === "") {
+    return wordCount;
+  }
+  let noPunctuation = chapterOfABook.replace(punctuationRegEx, "");
+  //console.log(noPunctuation);
+  let arrayOfWords = noPunctuation.split(" ");
 
   // Write your code in here
   arrayOfWords.forEach((word) => {
@@ -11,6 +17,7 @@ function calculateWords(chapterOfABook) {
       wordCount[word] = 1;
     }
   });
+  console.log(wordCount);
   return wordCount;
 }
 

@@ -10,13 +10,19 @@ function tweets(e) {
   tweetsArr.push(textTyped.value);
   addTweets(tweetsArr);
   textTyped.value = "";
+  counter.textContent = 0;
 }
-function deleteTweet() {}
+function tweeter(tweet) {
+  let handle = /(@)(\w+)/g;
+  let newTweet = tweet.replace(handle, `<a href="www.twitter.com/$2">$1$2</a>`);
+  return newTweet;
+}
 function addTweets(arr) {
   timeLine.textContent = "";
   arr.forEach((tweet) => {
+    let checkTweet = tweeter(tweet);
     let pEl = document.createElement("p");
-    pEl.textContent = tweet;
+    pEl.innerHTML = checkTweet;
     timeLine.insertBefore(pEl, timeLine.firstChild);
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
