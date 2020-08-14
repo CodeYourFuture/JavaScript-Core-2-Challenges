@@ -27,7 +27,7 @@ function addTweets(arr) {
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     pEl.appendChild(deleteBtn);
-    deleteBtn.style.marginLeft = "1rem";
+    deleteBtn.style.marginLeft = "50rem";
     deleteBtn.addEventListener("click", function (event) {
       let indexOfTweet = Array.from(timeLine.children)
         .reverse()
@@ -49,7 +49,7 @@ function countUpdater(event) {
     // btnSubmit.setAttribute('value','disable');
     btnSubmit.disabled = true;
   } else if (characterCount <= 280) {
-    counter.style.color = "black";
+    counter.style.color = "#215a39";
     btnSubmit.disabled = false;
   }
 }

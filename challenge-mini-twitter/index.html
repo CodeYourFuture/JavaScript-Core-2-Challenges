@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Crimson+Text:wght@600&family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <h1 class="title">Mini-Twitter</h1>
     <form action="" id="form">
-      <textarea name="" id="texts" cols="30" rows="10"></textarea>
-      <p id="textCounter">0</p>
+      <textarea
+        name=""
+        placeholder="Tweet goes here..."
+        id="texts"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <p class="count">Character Count: <span id="textCounter">0</span></p>
       <button type="submit" id="submit">Submit</button>
     </form>
-    <h4 class="tweet">Tweets Timeline</h4>
-    <div id="timeline"></div>
-    <script src="./script.js"></script>
+    <h4 class="tweet title">Tweets Timeline</h4>
+    <div class="wrapper">
+      <div id="timeline"></div>
+    </div>
+
+    <script src="./src/index.js"></script>
   </body>
 </html>
