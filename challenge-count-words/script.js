@@ -1,8 +1,18 @@
 function calculateWords(chapterOfABook) {
-  const wordCount = {};
-
-  // Write your code in here
-
+  let wordCount = {};
+  let wordList = chapterOfABook.split(" ")
+  //console.log(wordList)
+  let words = wordList.map(el => el.replace(/[^\w\s]|_/g,"").toLowerCase());
+  for (i of words) {
+	  if (i) {
+		wordCount[i] ? wordCount[i]++ : wordCount[i] = 1;
+	  }
+  }
+  let common = "none";
+  if (Object.keys(wordCount).length > 0) {
+	  common = Object.keys(wordCount).reduce((a, b) => wordCount[a] > wordCount[b] ? a : b);
+  } 
+  console.log(`The most common word is: ${common}`)
   return wordCount;
 }
 
