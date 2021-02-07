@@ -17,7 +17,18 @@ function calculateWords(chapterOfABook) {
 
   return wordCount;
 
+
+for (let i = 0, len = str.size(); i< len; i++){
+  //checking for punctuation
+  if (ispunct(str[i]))
+  {
+    str.erase(i--, 1);
+    len = strArr.size();
+  }
+  }
 }
+
+
 
 
 calculateWords(getDraculaChapterOne());
