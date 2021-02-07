@@ -1,7 +1,32 @@
+function updateWordCount(word, wordCount) {
+
+  // if the word is not an empty string
+  if(word !== "") {
+    // if the word already exists in the object wordCount
+    if(wordCount[word] !== undefined) {
+      // just increment its counter
+      wordCount[word]++;
+    }
+    else {// if the word is not yet added to the wordCount
+      // add this new word to wordCount
+      wordCount[word] = 1;
+    }
+  }
+}
+
+
 function calculateWords(chapterOfABook) {
+
+  // split the chapter into individual words
+  const wordsOfTheChapter = chapterOfABook.split(" ");
+
+  // initialize the wordCount object
   const wordCount = {};
 
-  // Write your code in here
+  // for each word of the chapted update the wordCount object
+  wordsOfTheChapter.forEach( word => {
+    updateWordCount(word, wordCount);
+  });
 
   return wordCount;
 }
