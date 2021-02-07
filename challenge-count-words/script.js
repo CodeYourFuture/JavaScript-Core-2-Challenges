@@ -2,7 +2,18 @@ function calculateWords(chapterOfABook) {
   const wordCount = {};
 
   // Write your code in here
-
+  chapterOfABook = chapterOfABook.split(" "); // this will split the chapter book into single words
+  let regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+  for (var i = 0; i < chapterOfABook.length; i++) {
+    let word = chapterOfABook[i];
+    if (word !== "") {
+      if (wordCount[word] === undefined) {
+        wordCount[word] = 1;
+      } else {
+        wordCount[word] += 1;
+      }
+    }
+  }
   return wordCount;
 }
 
