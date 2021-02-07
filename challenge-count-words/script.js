@@ -1,10 +1,24 @@
 function calculateWords(chapterOfABook) {
   const wordCount = {};
 
-  // Write your code in here
+  let strArr = chapterOfABook.split(" ");// split the string into an Array
+  
+  // to find any repeating patterns
+  strArr.forEach((word) => {
+    if (word !== "") {
+      // to find any repeating words increase the count
+      if (wordCount[word] === undefined) {
+        wordCount[word] = 1;
+      } else {
+        wordCount[word] += 1;
+      }
+    }
+  });
 
   return wordCount;
+
 }
+
 
 calculateWords(getDraculaChapterOne());
 
