@@ -1,7 +1,29 @@
+
+
+//helper function
+function theMostCommonWord(arr) {
+  let max = Object.keys(arr).reduce((a, b) => {
+    return arr[a] > arr[b] ? a : b;
+  })
+  return max;
+}
+
 function calculateWords(chapterOfABook) {
+  if (chapterOfABook === "") return {};
   const wordCount = {};
 
+  const wordArr = chapterOfABook.split(" ");
+
+  //Test function is created for a solution without replace() and toLowerCase() from the line 8. That is why I left active line 5
+  // const wordArr = chapterOfABook.replace(/[^\w\s]|_/g, "").toLowerCase().split(" ")
+
+  wordArr.forEach(word => {
+    wordCount[word] ? wordCount[word]++ : wordCount[word] = 1;
+  });
+
   // Write your code in here
+  let commonWord = theMostCommonWord(wordCount);
+  console.log(`The most common word is: ${commonWord ? commonWord : "not existing"}.`)
 
   return wordCount;
 }
