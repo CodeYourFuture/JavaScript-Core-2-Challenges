@@ -10,14 +10,44 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
     <title>Fastest Presser Game</title>
   </head>
 
   <body>
-    <div class="content"></div>
+    <div class="content">
+      <div class="start-game-container">
+        <h1>Fastest Presser</h1>
+        <input id="seconds-input" class="shadow border-0 p-1" type="number" placeholder="Set seconds" min="1" />
+        <h6 class="m-2 d-none" id="time-remaining-header">
+          Time remaining:
+          <span id="time-remaining" class="text-danger"></span>
+        </h6>
+        <div class="game-btns-container">
+          <button id="start-game-btn" class="btn btn-success p-2 m-3 shadow">
+            Start game
+          </button>
+          <button id="reset-game-btn" class="btn btn-primary p-2 m-3 shadow d-none">
+            Reset game
+          </button>
+        </div>
+      </div>
+      <div id="key-container" class="row text-center border">
+        <div class="col-6 p-4">
+          <h2>Player One</h2>
+          <h3>Press 'S' to win</h3>
+          <h4 id="player-s-score">Score: 0</h4>
+          <canvas id="my-canvasS"></canvas>
+        </div>
+        <div class="col-6 p-4 border-left">
+          <h2>Player Two</h2>
+          <h3>Press 'L' to win</h3>
+          <h4 id="player-l-score">Score: 0</h4>
+          <canvas id="my-canvasL"></canvas>
+        </div>
+      </div>
+    </div>
   </body>
-
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
   <script src="script.js"></script>
 </html>

@@ -1,3 +1,17 @@
 body {
   background-color: white;
 }
+.start-game-container h1 {
+  font-size: 2rem;
+  font-family: Chivo;
+}
+
+.start-game-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+h2 {
+  font-family: Chivo;
+}
