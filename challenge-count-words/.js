@@ -1,7 +1,18 @@
+// //function WordCount(str) {
+//   return str.split(" ").length;
+// }
+
+// console.log(WordCount("hello world"));
+
 function calculateWords(chapterOfABook) {
   const wordCount = {};
 
-  // Write your code in here
+  let split = chapterOfABook.split("word");
+  split.forEach((element) => {
+    if()
+
+
+  });
 
   return wordCount;
 }
