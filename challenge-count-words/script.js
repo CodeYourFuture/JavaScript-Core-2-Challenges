@@ -1,13 +1,43 @@
 function calculateWords(chapterOfABook) {
   const wordCount = {};
-
-  // Write your code in here
-
+  // we are not interested in empty string, i.e. "" (or '')
+  if (chapterOfABook !== "") {
+    // first convert chapterOfABook into an array of words separated by the space character
+    let wordsArray = chapterOfABook.split(" ").map(tidyUpWord);
+    // while the array still has some content in it
+    while (wordsArray[0] !== undefined) {
+      // the word we are interested in is always the first word in the array
+      let myWord = wordsArray[0];
+      // get the number of times myWord appears in wordsArray
+      let myWordCount = wordsArray.filter( (word) => word === myWord).length;
+      // update wordCount object with a new content
+      wordCount[myWord] = myWordCount;
+      // filter out all instances of myWord from wordsArray
+      wordsArray = wordsArray.filter((word) => word!==myWord);
+    }
+  }
+  // send the full-fledged wordCount object to the caller code
   return wordCount;
+}
+
+function tidyUpWord(word) {  
+    // define undesired characters in a word that are to be disregarded
+  let ignored = /[\.,;'"!\?]/g;
+
+  while (word[0].match(ignored)) {
+    word = word.substring(1);
+  }
+
+  while (word[word.length-1].match(ignored)) {
+    word = word.substring(0, word.length - 1);
+  }
+
+  return word;
 }
 
 calculateWords(getDraculaChapterOne());
 
+const { countReset } = require("console");
 /**                            */
 /**                            */
 /**                            */
