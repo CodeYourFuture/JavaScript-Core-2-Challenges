@@ -1,5 +1,6 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
-//test
+//test// testing again
+
 function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
