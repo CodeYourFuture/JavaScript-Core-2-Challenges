@@ -12,7 +12,14 @@ function calculateWords(chapterOfABook) {
       }
     }
   });
+  const wordCount = 'Hello, world!';
 
+  var wordCount = wordCount.split('');
+  var cleanLetters = wordCount.filter(function(letter) {
+  return punctuation.indexOf(letter) === -1;
+});
+
+var cleanString = cleanLetters.join('');  
   return wordCount;
 }
 
