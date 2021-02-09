@@ -37,6 +37,7 @@ function keyBoardEvents(e) {
   }
 }
 
+// Event listeners
 document.querySelector(".btnGuess").addEventListener("click", guessNumber);
 document.querySelector(".btnNewGame").addEventListener("click", newGame);
 document.addEventListener("keypress", keyBoardEvents);
