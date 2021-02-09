@@ -1,16 +1,28 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
+let numberOfTries = 0;
+const maxTries = 9;
 
 function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
+  let output = document.querySelector(".final-out");
 
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
 
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
 
   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
-
+	numberOfTries++;
+	if (numberOfTries > maxTries) {
+		output.innerHTML = `You Lose, the number was ${randomNumber}`;
+	}
+ 	else if (guess < randomNumber) {
+		output.innerHTML = `Number is too low, try again. You guessed ${numberOfTries} times.`;
+	} 
   //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
+    else if (guess === randomNumber) {
+		output.innerHTML = `Guess is correct. You win! It took you ${numberOfTries} tries.`;
+	}
 }
 
 // For this task we will be making a "New Game" button function which will reset our game,
