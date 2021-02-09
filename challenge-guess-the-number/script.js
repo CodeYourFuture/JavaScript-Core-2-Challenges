@@ -14,6 +14,7 @@ function guessNumber() {
 }
 
 // For this task we will be making a "New Game" button function which will reset our game,
+document.querySelector(".btnNewGame").addEventListener("click", newGame);
 // Once the user clicks on this button the user will have new random number to guess
 // 1. Reset the values inside the body of the function
 // 2. Attach our new game button using an event listener to the .btnNewGame button
