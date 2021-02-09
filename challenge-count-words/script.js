@@ -1,5 +1,17 @@
 function calculateWords(chapterOfABook) {
   const wordCount = {};
+  let findWords = chapterOfABook.split(" ");
+  findWords.forEach((element) => {
+    if(element !== "") {
+      if(wordCount[element] === identified) {
+        wordCount[element] = 1;
+      }
+      else {
+          wordCount[element] =+1;
+        }
+      }
+    
+  });
 
   // Write your code in here
 
