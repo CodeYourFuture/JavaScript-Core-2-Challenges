@@ -11,36 +11,35 @@ function guessNumber() {
   numOfClicks++;
   //Collect input from the user
   let guess = inputValues.value;
-
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
 
-  if (guess === 0 || guess === "" || guess > 100 || guess === "" || guess < 0) {
+  if (guess == 0 || guess === "" || guess > 100 || guess < 0) {
     guessMessage.innerHTML = "Please enter a number between 1 and 100";
     guessMessage.style.background = "#ff7770";
     guessMessage.style.color = "white";
     guessMessage.style.textAlign = "center";
     container.appendChild(guessMessage);
-  }
-
-  if (guess > randomNumber) {
-    guessMessage.innerHTML = "Number is too high,try again";
-    guessMessage.style.background = "#8B008B";
-    guessMessage.style.color = "white";
-    guessMessage.style.textAlign = "center";
-    container.appendChild(guessMessage);
-  } else if (guess < randomNumber) {
-    guessMessage.innerHTML = "Number is too low, try again";
-    guessMessage.style.background = "pink";
-    guessMessage.style.color = "white";
-    guessMessage.style.textAlign = "center";
-    container.appendChild(guessMessage);
-  } else {
-    guessMessage.innerHTML = "Guess is correct, you win!";
-    guessMessage.style.background = "green";
-    guessMessage.style.color = "white";
-    guessMessage.style.textAlign = "center";
-    container.appendChild(guessMessage);
+  } else  {
+    if (guess > randomNumber) {
+      guessMessage.innerHTML = "Number is too high,try again";
+      guessMessage.style.background = "#8B008B";
+      guessMessage.style.color = "white";
+      guessMessage.style.textAlign = "center";
+      container.appendChild(guessMessage);
+    } else if (guess < randomNumber) {
+      guessMessage.innerHTML = "Number is too low, try again";
+      guessMessage.style.background = "pink";
+      guessMessage.style.color = "white";
+      guessMessage.style.textAlign = "center";
+      container.appendChild(guessMessage);
+    } else {
+      guessMessage.innerHTML = "Guess is correct, you win!";
+      guessMessage.style.background = "green";
+      guessMessage.style.color = "white";
+      guessMessage.style.textAlign = "center";
+      container.appendChild(guessMessage);
+    }
   }
 
   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
