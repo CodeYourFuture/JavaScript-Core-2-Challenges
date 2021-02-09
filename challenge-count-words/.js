@@ -1,21 +1,27 @@
-// //function WordCount(str) {
-//   return str.split(" ").length;
-// }
-
-// console.log(WordCount("hello world"));
-
-function calculateWords(chapterOfABook) {
-  const wordCount = {};
-
-  let split = chapterOfABook.split("word");
-  split.forEach((element) => {
-    if()
+// function calculateWords(chapterOfABook) {
+//   const wordCount = {};
 
 
-  });
 
-  return wordCount;
-}
+
+//     let split = chapterOfABook.split(" ");
+
+//     split.forEach((word) => {
+//       if (word !== "") {
+//         if (wordCount[word] === undefined) {
+//           wordCount[word] = 1;
+//         } else {
+//           wordCount[word] += 1;
+//         }
+//       }
+//     });
+
+//     return wordCount;
+//   }
+
+
+
+
 
 calculateWords(getDraculaChapterOne());
 
