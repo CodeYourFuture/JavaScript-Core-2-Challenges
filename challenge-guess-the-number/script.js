@@ -3,6 +3,7 @@ const finalOutPut = document.querySelector(".final-output"); // access final out
 const displayNumberOfTriesElement = document.querySelector(".Tries-output");
 let IsGamePlaying = false;
 let numberOfTries = 7; // number of tries allowed
+let numberOfTriesTaken = 0;
 
 function guessNumber() {
   // start game
@@ -20,6 +21,7 @@ function guessNumber() {
     //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
     else if (guess > randomNumber) {
       numberOfTries--;
+      numberOfTriesTaken++;
       displayNumberOfTriesElement.innerHTML = `Number of tries: ${numberOfTries}`;
       finalOutPut.innerHTML = "Number is too high! Try again";
     }
@@ -27,16 +29,16 @@ function guessNumber() {
     //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
     else if (guess < randomNumber) {
       numberOfTries--;
+      numberOfTriesTaken++;
       displayNumberOfTriesElement.innerHTML = `Number of tries: ${numberOfTries}`;
       finalOutPut.innerHTML = "Number is too low! Try again";
     }
 
     //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
     else {
+      numberOfTriesTaken++;
       finalOutPut.innerHTML = `${randomNumber} is correct. You Win!!!`;
-      displayNumberOfTriesElement.innerHTML = `Number of tries left: ${
-        numberOfTries - 1
-      }`;
+      displayNumberOfTriesElement.innerHTML = `It took you: ${numberOfTriesTaken} tries`;
     }
 
     //  check if number of tries is zero and number is not guessed. if true end game and display result
@@ -55,9 +57,16 @@ function guessNumber() {
 // 2. Attach our new game button using an event listener to the .btnNewGame button
 function newGame() {
   //Your code here
+  finalOutPut.innerHTML = "Please enter a number  between 1 and 100";
+  IsGamePlaying = false;
   //Reset randomNumber
+  let randomNumber = Math.floor(Math.random() * 100 + 1);
   //Reset users input field
+  let guess = (document.querySelector(".inputs-Values").value = "");
   //Reset tries, and triesTaken by the user
+  numberOfTries = 7;
+  displayNumberOfTriesElement.innerHTML = `Number of tries: ${numberOfTries}`;
+  numberOfTriesTaken = 0;
 }
 
 //keyboard exception
@@ -68,4 +77,5 @@ function keyBoardEvents(e) {
 }
 
 document.querySelector(".btnGuess").addEventListener("click", guessNumber);
+document.getElementById("newGame").addEventListener("click", newGame);
 document.addEventListener("keypress", keyBoardEvents);
