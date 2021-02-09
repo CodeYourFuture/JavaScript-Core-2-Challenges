@@ -8,7 +8,7 @@ let guessMessage = document.createElement("p");
 let numOfClicks = 0;
 
 function guessNumber() {
-  numOfClicks++;
+  //numOfClicks++;
   //Collect input from the user
   let guess = inputValues.value;
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
@@ -20,7 +20,14 @@ function guessNumber() {
     guessMessage.style.color = "white";
     guessMessage.style.textAlign = "center";
     container.appendChild(guessMessage);
-  } else  {
+  } else if (numOfClicks >= 7) { 
+    guessMessage.innerHTML = `You loose the random number was ${randomNumber}`;
+    guessMessage.style.background = "blue";
+    guessMessage.style.color = "white";
+    guessMessage.style.textAlign = "center";
+    container.appendChild(guessMessage);
+  } else {
+    numOfClicks++; // the counter gives the user 1 more try
     if (guess > randomNumber) {
       guessMessage.innerHTML = "Number is too high,try again";
       guessMessage.style.background = "#8B008B";
@@ -34,7 +41,7 @@ function guessNumber() {
       guessMessage.style.textAlign = "center";
       container.appendChild(guessMessage);
     } else {
-      guessMessage.innerHTML = "Guess is correct, you win!";
+      guessMessage.innerHTML = `Guess is correct, you win!, it took you ${numOfClicks} tries`;
       guessMessage.style.background = "green";
       guessMessage.style.color = "white";
       guessMessage.style.textAlign = "center";
