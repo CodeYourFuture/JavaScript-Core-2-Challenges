@@ -1,25 +1,45 @@
-function guessNumber(){
 let randomNumber = Math.floor(Math.random() * 100 + 1);
+let countDown = 7;
+function guessNumber(){
+  console.log(randomNumber);
 //let output = document.getElementsByClassName("final-output");
 let inputNum = document.getElementById("inputValues").value; //Collect input from the user
 let output = document.getElementById("outputNum");
-//console.log(inputNum);
-if (inputNum < 1 || inputNum >100){
+
+
+let countDownHolder = document.getElementById("counter");
+countDown--;
+countDownHolder.innerHTML = countDown;
+countDownHolder.style.color = "#1092c2";
+console.log(countDown);
+
+
+if (inputNum < 1 || inputNum > 100){
   output.innerHTML = "Please enter a number between 1 and 100";
+  
 }
 else{
 
   if (inputNum > randomNumber){
         output.innerHTML = "Your guess is too high! Try again";
+        output.style.color = "blue";
+
        }
        else if(inputNum < randomNumber){
          output.innerHTML = "Your guess is too low! Try again";
+         output.style.color = "red";
         }
 
         else{
       output.innerHTML= "Guess is correct. You Win!";
+      output.style.color = "green";
     }
 
+}
+
+if(countDown === 0){
+   output.innerHTML = `You lose, the number was ${randomNumber}`;
+  // output.innerHTML = "You lose, the number was " + randomNumber;
 }
 
       
