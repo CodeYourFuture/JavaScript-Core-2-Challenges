@@ -3,6 +3,7 @@ function calculateWords(chapterOfABook) {
 
   // Write your code in here
 
+
   return wordCount;
 }
 
