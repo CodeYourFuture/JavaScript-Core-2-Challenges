@@ -1,20 +1,18 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
+ const output = document.querySelector(".final-output");
 
 function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
-  const output = document.querySelector(".final-output");
+
 
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
-let gameIsRunning = true;
-let gameIsFinished = false;
-
-if (guess <= 0 || guess >= 100){
+if (guess <= 0 || guess > 100){
 	output.innerHTML = "Please enter a number between 1 and 100";
 }
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
   else if (guess > randomNumber) {
-	output.innerHTML = "Number is too high, try again";
+    output.innerHTML = "Number is too high, try again";
   }			
   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
   else if (guess < randomNumber) {
@@ -33,14 +31,13 @@ if (guess <= 0 || guess >= 100){
 
 function newGame() {
 
- finalOutPut.innerHTML = "Please enter a number  between 1 and 100";
- GamePlaying = false;
-  let randomNumber = Math.floor(Math.random() * 100 + 1);                 //Reset randomNumber
-  let guess = (document.querySelector(".inputs-Values").value = "");      //Reset users input field
+ output.innerHTML = "Please enter a number  between 1 and 100";
+  randomNumber = Math.floor(Math.random() * 100 + 1);       //Reset randomNumber
+  document.querySelector(".inputs-Values").value = "";      //Reset users input field
   
-  numberOfTries = 7;                                                      //Reset tries, and triesTaken by the user
+  numberOfTries = 7;                                        //Reset tries, and triesTaken by the user
   numberOfTriesTaken = 0;
-  NumberOfTriesEl.innerHTML = `Number of tries: ${numberOfTries}`;
+  numberOfTriesEl.innerHTML = `Number of tries: ${numberOfTries}`;
 }
 
 
