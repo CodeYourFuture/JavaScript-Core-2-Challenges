@@ -27,7 +27,7 @@ function calculateWords(chapterOfABook) {
   return wordCount;
 }
 
-console.log(calculateWords(getDraculaChapterOne()));// deleted the from params and used console.log to display as requested.
+console.log(calculateWords(getDraculaChapterOne()));// deleted the from params and used console.log to display as requested. 
 
 /**                            */
 /**                            */
