@@ -4,7 +4,11 @@ function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
 
-  //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
+    //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
+    guess = parseInt(guess);
+    if (guess === undefined || guess > 100 || guess <= 0) {
+        console.log("Please enter a number between 1 and 100");
+    }
 
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
 
