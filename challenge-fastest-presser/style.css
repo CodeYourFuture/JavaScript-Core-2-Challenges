@@ -1,3 +1,15 @@
 body {
   background-color: white;
 }
+
+div {
+  background-color: yellow;
+  width: 60%;
+  height: 320px;
+  margin-top: 5%;
+  margin-left: 15%;
+}
+
+button {
+  width: 15%;
+}
