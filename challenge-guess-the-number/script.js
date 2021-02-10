@@ -5,10 +5,18 @@ function guessNumber() {
   let guess = document.querySelector(".inputs-Values").value;
   const output = document.querySelector(".final-output");
 
-  //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
+  //ME!! If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
+let gameIsRunning = true;
+let gameIsFinished = false;
 
-  //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
+if (guess <= 0 || guess >= 100){
 
+			document.querySelector(".final-output").innerHTML = "Please enter a number between 1 and 100";
+}
+  //ME!! If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
+  else if (guess > randomNumber) {
+			document.querySelector(".final-output").innerHTML = "Number is too high, try again";
+  }			
   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
   if (guess < randomNumber) {
      output.innerHTML="Number is too low, try again.";
