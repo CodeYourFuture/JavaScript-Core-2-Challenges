@@ -2,8 +2,21 @@ function calculateWords(chapterOfABook) {
   const wordCount = {};
 
   // Write your code in here
-
-  return wordCount;
+  let regEx = /(?=.*[!#$%.&*]+)/g;
+  let newArr = chapterOfABook.split(" ");
+  /[A-Z]/ === /[a-z]/;
+  
+  // Looping through the new array and counting reoccurrences of each valid word in a string 
+  for (let word of newArr) {
+    if (word !== regEx && word !== "") { 
+      if (wordCount[word] === undefined) {
+        wordCount[word] = 1;
+      } else {
+        wordCount[word]++;
+        }
+    }
+  }
+  return wordCount; 
 }
 
 calculateWords(getDraculaChapterOne());
