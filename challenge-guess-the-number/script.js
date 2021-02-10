@@ -26,6 +26,8 @@ function newGame() {
   //Reset randomNumber
   //Reset users input field
   //Reset tries, and triesTaken by the user
+  //Reset message to default
+  msg.textContent = 'Guess a number between 1 and 100';
 }
 
 //keyboard exception
