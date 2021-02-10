@@ -1,12 +1,33 @@
-function calculateWords(chapterOfABook) {
-  const wordCount = {};
+function updateCount(word, wordCount){
 
+  if(word !== ''){//checking if the word is not an empty string
+
+    if(wordCount[word] !== undefined){ // checking if the word exists already in the count
+
+      wordCount[word]++; // if both of the word is not an empty string and word is not undefined pass then increment the counter by 1
+    } else {
+      wordCount[word] = 1; // if the word has not been added to the word count object add the new word to the wordCount object.
+    }
+  } 
+}
+function calculateWords(chapterOfABook) {
+
+ const wordsOfChapter = chapterOfABook.split(' '); // This splits the chapter in to individual words
+  const wordCount = {}; //this creates the object to store the wordCount words in
+
+  wordsOfChapter.forEach(function (word) {// used  the for each method tp iterate through the wordsOfChapter which had been split into induvidual words earlier vin the programme
+
+      updateCount(word, wordCount);// called the update count function that was created above
+  });
+  
+
+   
   // Write your code in here
 
   return wordCount;
 }
 
-calculateWords(getDraculaChapterOne());
+console.log(calculateWords(getDraculaChapterOne()));// deleted the from params and used console.log to display as requested. 
 
 /**                            */
 /**                            */
