@@ -3,7 +3,6 @@ let randomNumber = Math.floor(Math.random() * 100 + 1);
 function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
-let guess = document.querySelector(".inputs-Values").value;
   let msg  = document.querySelector(".final-output");
   // let guesses = document.getElementById(".final-output");
   if(guess != randomNumber){
