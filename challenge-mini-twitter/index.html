@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-tweet</title>
+    <link type="text/css" rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1></h1>
+    <section class="section input-area">
+      <h3>Tweet Area</h3>
+      <form id="frmTweet">
+        <input type="textarea" id="input-text" placeholder="Your tweet..." maxlength=280>
+        <p class="info"><span id="count"></span>&nbsp;of&nbsp;<span id="total"></span>&nbsp;characters&nbsp;left</p>
+        <button type="submit" name="btn-post" id="btn-post">Post</button>
+      </form>
+    </section>
+    <!-- Here goes timeline of tweets-->
+    <section class="section output-area">
+      <h3>Post Area</h3>   
+    </section>
+    <script src="src/index.js"></script>
+  </body>
+</html>
