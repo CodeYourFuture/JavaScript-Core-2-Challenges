@@ -9,7 +9,6 @@ let guessMessage = document.createElement("p");
 let numOfClicks = 0;
 
 function guessNumber() {
-
   //numOfClicks++;
   //Collect input from the user
 
@@ -23,7 +22,7 @@ function guessNumber() {
     guessMessage.style.color = "white";
     guessMessage.style.textAlign = "center";
     container.appendChild(guessMessage);
-  } else if (numOfClicks >= 7) { 
+  } else if (numOfClicks >= 7) {
     guessMessage.innerHTML = `You loose the random number was ${randomNumber}`;
     guessMessage.style.background = "blue";
     guessMessage.style.color = "white";
@@ -52,18 +51,7 @@ function guessNumber() {
     }
   }
 
-  //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
-	numberOfTries++;
-	if (numberOfTries > maxTries) {
-		output.innerHTML = `You Lose, the number was ${randomNumber}`;
-	}
- 	else if (guess < randomNumber) {
-		output.innerHTML = `Number is too low, try again. You guessed ${numberOfTries} times.`;
-	} 
-  //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
-    else if (guess === randomNumber) {
-		output.innerHTML = `Guess is correct. You win! It took you ${numberOfTries} tries.`;
-	}
+
 }
 
 // For this task we will be making a "New Game" button function which will reset our game,
@@ -71,42 +59,39 @@ function guessNumber() {
 // 1. Reset the values inside the body of the function
 // 2. Attach our new game button using an event listener to the .btnNewGame button
 
-var btnNewGame = document.querySelector('.btnNewGame');
-btnNewGame.addEventListener('click', newGame);
+//var btnNewGame = document.querySelector('.btnNewGame');
+btnNewGame.addEventListener("click", newGame);
 
 function newGame() {
+  //Your code here
 
-    //Your code here
-    
-    var userInput = document.querySelector(".inputs-Values");
-    var triesTaken = document.querySelector(".Tries-output");
-    var tries = document.querySelector(".final-output");
-    //Reset randomNumber
-    randomNumber = Math.floor(Math.random() * 100 + 1);
-    //Reset users input field 
-    userInput.value = 0;
-    //Reset tries, and triesTaken by the user
-    triesTaken.innerHTML = "Number of tries : 10";
-    tries.innerHTML = "Guess a number between 1 and 100";
-
-//   randomNumber = Math.floor(Math.random() * 100 + 1);
-//   inputValues.value = "";
+  var userInput = document.querySelector(".inputs-Values");
+  var triesTaken = document.querySelector(".Tries-output");
+  var tries = document.querySelector(".final-output");
+  //Reset randomNumber
+  randomNumber = Math.floor(Math.random() * 100 + 1);
+  //Reset users input field
+  userInput.value = 0;
+  //Reset tries, and triesTaken by the user
+  //  triesTaken.innerHTML = "Number of tries : 10";
+  tries.innerHTML = "Guess a number between 1 and 100";
+  guessMessage.innerHTML = "";
+  //   randomNumber = Math.floor(Math.random() * 100 + 1);
+  //   inputValues.value = "";
   numOfClicks = 0;
   //Your code here
   //Reset randomNumber
   //Reset users input field
   //Reset tries, and triesTaken by the user
-
 }
 //keyboard exception
 function keyBoardEvents(e) {
-    if (e.keyCode === 13) {
-        guessNumber();
-    }
+  if (e.keyCode === 13) {
+    guessNumber();
+  }
 }
 
 document.querySelector(".btnGuess").addEventListener("click", guessNumber);
 
 btnNewGame.addEventListener("click", newGame);
 document.addEventListener("keypress", keyBoardEvents);
-
