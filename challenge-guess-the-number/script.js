@@ -4,13 +4,21 @@ let msg = document.querySelector('.final-output');
 function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
-  
-  else if(guess < randomNumber){
-    msg.textContent = "Number is too low";
+
+  let msg  = document.querySelector(".final-output");
+  // let guesses = document.getElementById(".final-output");
+  if(guess != randomNumber){
+   msg.textContent = "Guess is wrong.";
+  }else{
+    msg.textContent = `You win the number was ${randomNumber}`;
+  }
+
+
+///This is jons test!!!!!
 
  }
   
-  }
+  
 
 
 ///This is jons test!!!!!
@@ -50,9 +58,13 @@ function guessNumber() {
 
 function newGame() {
 
+
    let guess = document.querySelector(".inputs-Values").value = " "; //Fatimoh
    msg.textContent = 'Guess a number between 1 and 100'; //Liew
+   randomNumber = Math.floor(Math.random()*100) + 1;
  }; 
+
+
 
 
   //Your code here
