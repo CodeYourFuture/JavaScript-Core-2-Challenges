@@ -1,7 +1,7 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
 let output = document.querySelector(".final-output");
 let toutput = document.querySelector(".Tries-output")
-let tries = 7;                                        //Reset tries, and triesTaken by the user
+let tries = 7;                                    
 let triesTaken = 0;
 
 function guessNumber() {
@@ -45,8 +45,6 @@ function newGame() {
   randomNumber = Math.floor(Math.random() * 100 + 1);       //Reset randomNumber
   document.querySelector(".inputs-Values").value = "";      //Reset users input field
   // console.log(randomNumber);
-  
-  // numberOfTriesEl.innerHTML = `Number of tries: ${numberOfTries}`;
 }
 
 
