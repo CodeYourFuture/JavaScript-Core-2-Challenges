@@ -60,7 +60,3 @@ function reset() {
   btnPost.disabled = true;
   spanLen.textContent = txtArea.maxLength;
 }
-
-function deletePost(e) {
-  e.target.parentNode.parentNode.parentNode.parentNode.remove();
-}
