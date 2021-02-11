@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link class="canvas" type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Vast+Shadow">
     <link
       href="https://fonts.googleapis.com/css?family=Chivo:900i|Muli|Titillium+Web"
       rel="stylesheet"
@@ -31,23 +32,27 @@
             Reset game
           </button>
         </div>
+        <h3 class="announce d-none"></h4>
       </div>
       <div id="key-container" class="row text-center border">
         <div class="col-6 p-4">
+          
           <h2>Player One</h2>
           <h3>Press 'S' to win</h3>
           <h4 id="player-s-score">Score: 0</h4>
-          <canvas id="my-canvasS"></canvas>
+          <canvas id="my-canvasS" width="400" height="200"></canvas>
         </div>
         <div class="col-6 p-4 border-left">
+          
           <h2>Player Two</h2>
           <h3>Press 'L' to win</h3>
           <h4 id="player-l-score">Score: 0</h4>
-          <canvas id="my-canvasL"></canvas>
+          <canvas id="my-canvasL" width="400" height="200"></canvas>
         </div>
       </div>
     </div>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+  <script>confetti.start()</script>
   <script src="script.js"></script>
 </html>
