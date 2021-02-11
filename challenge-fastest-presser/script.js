@@ -22,7 +22,7 @@ const playerLScore = document.getElementById("player-l-score");
 const canvasL = document.getElementById("my-canvasL");
 const canvasS = document.getElementById("my-canvasS");
 const announce = document.querySelector(".announce");
-const link = document.querySelector(".canvas");
+
 
 // Initial values for counters
 let counterForL = 0;
@@ -60,6 +60,9 @@ startGameBtn.addEventListener("click", function (event) {
 
   setTimeout(function () {
     gameIsRunning = false;
+    resetGameBtn.classList.remove("d-none");
+    startGameBtn.classList.add("d-none");
+    const link = document.querySelector(".canvas");
     
     // Deciding who the winner is
     if (counterForL > counterForS) {
@@ -68,7 +71,7 @@ startGameBtn.addEventListener("click", function (event) {
       confetti.start();
       canvasL.style.backgroundColor = "indigo";
 
-// Canvas trick from https://stackoverflow.com/questions/2635814/
+// Canvas trick taken from https://stackoverflow.com/questions/2635814/
       var ctx = canvasL.getContext("2d");
       var image = new Image();
       image.src = link.href;
@@ -80,37 +83,32 @@ startGameBtn.addEventListener("click", function (event) {
         ctx.lineWidth = 4;
         ctx.strokeText = ("Winner!", 200, 120);
         ctx.fillText("Winner!", 200, 120);
-      };
-
-      
+      };  
     } else if (counterForL < counterForS) {
-      announce.classList.remove("d-none");
-      announce.innerHTML = `Player One wins, with a score of ${counterForS}`;
-      confetti.start();
-      canvasS.style.background = "indigo";
+        announce.classList.remove("d-none");
+        announce.innerHTML = `Player One wins, with a score of ${counterForS}`;
+        confetti.start();
+        canvasS.style.background = "indigo";
       
-// Canvas trick from https://stackoverflow.com/questions/2635814/
-      var ctx = canvasS.getContext("2d");
-      var image = new Image();
-      image.src = link.href;
-      image.onerror = function() {
-        ctx.font = '70px "Vast Shadow"';
-        ctx.textAlign = "center";
-        ctx.fillStyle = "white";
-        ctx.strokeStyle = "white";
-        ctx.lineWidth = 4;
-        ctx.strokeText = ("Winner!", 200, 120);
-        ctx.fillText("Winner!", 200, 120);
-      };
-    } else {
-      announce.classList.remove("d-none");
-      announce.innerHTML = `It's a draw, with a score of ${counterForL}`;
-    }
-
-    resetGameBtn.classList.remove("d-none");
-    startGameBtn.classList.add("d-none");
-  }, gameTime);
-});
+// Canvas trick taken from https://stackoverflow.com/questions/2635814/
+        var ctx = canvasS.getContext("2d");
+        var image = new Image();
+        image.src = link.href;
+        image.onerror = function() {
+          ctx.font = '70px "Vast Shadow"';
+          ctx.textAlign = "center";
+          ctx.fillStyle = "white";
+          ctx.strokeStyle = "white";
+          ctx.lineWidth = 4;
+          ctx.strokeText = ("Winner!", 200, 120);
+          ctx.fillText("Winner!", 200, 120);
+        };
+      } else {
+          announce.classList.remove("d-none");
+          announce.innerHTML = `It's a draw, with a score of ${counterForL}`;
+        }
+    }, gameTime);
+  });
 
 // An event listener for the 'Reset Game' button
 resetGameBtn.addEventListener("click", function (event) {
@@ -124,8 +122,6 @@ resetGameBtn.addEventListener("click", function (event) {
   canvasS.style.background = "white";
   announce.classList.add("d-none");
   
-
-
   resetGameBtn.classList.add("d-none");
   startGameBtn.classList.remove("d-none");
   timeRemainingHeader.classList.add("d-none");
