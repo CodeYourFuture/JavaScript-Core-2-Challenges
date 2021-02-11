@@ -6,31 +6,44 @@ let msg = document.querySelector('.final-output');
 
 function guessNumber() {
   //Collect input from the user
+
   let guess = document.querySelector(".inputs-Values").value;
   
   else if(guess < randomNumber){
     msg.textContent = "Number is too low";
 
-<<<<<<< Updated upstream
-=======
-  }
+
+ }
   
   }
 
 
 ///This is jons test!!!!!
 
->>>>>>> Stashed changes
+  let guess = document.querySelector(".inputs-Values").value;
+  
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
+
   if (guess === '' || guess > 100 || guess < 1) {
     msg.textContent = 'Please enter a number between 1 and 100';
   } 
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
 
-  //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
+  else if(guess > randomNumber){   
+     msg.textContent = '😢 Number is too high';//jon
 
   //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
 
+}
+   
+  //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
+  
+//   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
+ 
+//   //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
+//   
+
+ 
 
 
 // For this task we will be making a "New Game" button function which will reset our game,
@@ -45,6 +58,8 @@ function newGame() {
    let guess = document.querySelector(".inputs-Values").value = " ";
   
  }; 
+
+
   //Your code here
   //Reset randomNumber
   //Reset users input field
@@ -57,6 +72,6 @@ function keyBoardEvents(e) {
     guessNumber();
   }
 }
-
+document.querySelector('.btnNewGame').addEventListener('click', newGame);//jon
 document.querySelector(".btnGuess").addEventListener("click", guessNumber);
 document.addEventListener("keypress", keyBoardEvents);
