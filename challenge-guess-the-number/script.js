@@ -29,8 +29,8 @@ if (guess <= 0 || guess > 100){
   }
   //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
   else {
-     output.innerHTML="Guess is correct. You win!";
-     toutput.innerHTML=`It took you ${triesTaken} number of tries`;
+   	output.innerHTML="Guess is correct. You win!";
+    toutput.innerHTML=`It took you ${triesTaken} number of tries`;
   }  
 }
 
@@ -44,7 +44,7 @@ function newGame() {
  output.innerHTML = "Please enter a number  between 1 and 100";
   randomNumber = Math.floor(Math.random() * 100 + 1);       //Reset randomNumber
   document.querySelector(".inputs-Values").value = "";      //Reset users input field
-  
+  // console.log(randomNumber);
 }
 
 
