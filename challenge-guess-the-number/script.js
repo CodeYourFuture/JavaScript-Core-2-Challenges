@@ -1,5 +1,8 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
- const output = document.querySelector(".final-output");
+let output = document.querySelector(".final-output");
+let toutput = document.querySelector(".Tries-output")
+let tries = 7;                                    
+let triesTaken = 0;
 
 function guessNumber() {
   //Collect input from the user
@@ -13,14 +16,21 @@ if (guess <= 0 || guess > 100){
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
   else if (guess > randomNumber) {
     output.innerHTML = "Number is too high, try again";
+    tries -= 1;
+    triesTaken += 1;
+    toutput.innerHTML="Number of tries " + tries;
   }			
   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
   else if (guess < randomNumber) {
-     	output.innerHTML="Number is too low, try again.";
+    output.innerHTML="Number is too low, try again.";
+    tries -= 1;
+    triesTaken += 1;
+    toutput.innerHTML="Number of tries " + tries;
   }
   //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
   else {
-   	output.innerHTML="Guess is correct. You win!";
+     output.innerHTML="Guess is correct. You win!";
+     toutput.innerHTML=`It took you ${triesTaken} number of tries`;
   }  
 }
 
@@ -35,9 +45,6 @@ function newGame() {
   randomNumber = Math.floor(Math.random() * 100 + 1);       //Reset randomNumber
   document.querySelector(".inputs-Values").value = "";      //Reset users input field
   
-  numberOfTries = 7;                                        //Reset tries, and triesTaken by the user
-  numberOfTriesTaken = 0;
-  numberOfTriesEl.innerHTML = `Number of tries: ${numberOfTries}`;
 }
 
 
