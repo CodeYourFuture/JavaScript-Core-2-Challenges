@@ -3,6 +3,10 @@ let randomNumber = Math.floor(Math.random() * 100 + 1);
 function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
+  // If the number of tries is exceeded
+  if (i === 0) { 
+    triesOutput.innerHTML = "You Lose, the number was: " + randomNumber; output.classList.add("d-none"); 
+  } 
 
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
 
