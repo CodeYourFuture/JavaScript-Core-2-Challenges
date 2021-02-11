@@ -9,6 +9,7 @@ let guessMessage = document.createElement("p");
 let numOfClicks = 0;
 
 function guessNumber() {
+
   //numOfClicks++;
   //Collect input from the user
 
@@ -69,22 +70,43 @@ function guessNumber() {
 // Once the user clicks on this button the user will have new random number to guess
 // 1. Reset the values inside the body of the function
 // 2. Attach our new game button using an event listener to the .btnNewGame button
+
+var btnNewGame = document.querySelector('.btnNewGame');
+btnNewGame.addEventListener('click', newGame);
+
 function newGame() {
-  randomNumber = Math.floor(Math.random() * 100 + 1);
-  inputValues.value = "";
+
+    //Your code here
+    
+    var userInput = document.querySelector(".inputs-Values");
+    var triesTaken = document.querySelector(".Tries-output");
+    var tries = document.querySelector(".final-output");
+    //Reset randomNumber
+    randomNumber = Math.floor(Math.random() * 100 + 1);
+    //Reset users input field 
+    userInput.value = 0;
+    //Reset tries, and triesTaken by the user
+    triesTaken.innerHTML = "Number of tries : 10";
+    tries.innerHTML = "Guess a number between 1 and 100";
+
+//   randomNumber = Math.floor(Math.random() * 100 + 1);
+//   inputValues.value = "";
   numOfClicks = 0;
   //Your code here
   //Reset randomNumber
   //Reset users input field
   //Reset tries, and triesTaken by the user
+
 }
 //keyboard exception
 function keyBoardEvents(e) {
-  if (e.keyCode === 13) {
-    guessNumber();
-  }
+    if (e.keyCode === 13) {
+        guessNumber();
+    }
 }
 
 document.querySelector(".btnGuess").addEventListener("click", guessNumber);
+
 btnNewGame.addEventListener("click", newGame);
 document.addEventListener("keypress", keyBoardEvents);
+
