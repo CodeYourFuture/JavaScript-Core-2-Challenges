@@ -1,17 +1,12 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
 let msg = document.querySelector('.final-output');
 
-
-
-
 function guessNumber() {
   //Collect input from the user
-
   let guess = document.querySelector(".inputs-Values").value;
   
   else if(guess < randomNumber){
     msg.textContent = "Number is too low";
-
 
  }
   
@@ -20,12 +15,12 @@ function guessNumber() {
 
 ///This is jons test!!!!!
 
-  let guess = document.querySelector(".inputs-Values").value;
+  
   
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
 
   if (guess === '' || guess > 100 || guess < 1) {
-    msg.textContent = 'Please enter a number between 1 and 100';
+    msg.textContent = 'Please enter a number between 1 and 100'; //Liew
   } 
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
 
@@ -55,8 +50,8 @@ function guessNumber() {
 
 function newGame() {
 
-   let guess = document.querySelector(".inputs-Values").value = " ";
-  
+   let guess = document.querySelector(".inputs-Values").value = " "; //Fatimoh
+   msg.textContent = 'Guess a number between 1 and 100'; //Liew
  }; 
 
 
@@ -64,6 +59,10 @@ function newGame() {
   //Reset randomNumber
   //Reset users input field
   //Reset tries, and triesTaken by the user
+
+
+  //Reset message to default
+  
 
 
 //keyboard exception
