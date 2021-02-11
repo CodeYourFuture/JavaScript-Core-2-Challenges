@@ -11,7 +11,6 @@ More details for the implementation of this challenge can be found in `script.js
 ### Example Result
 
 You can find an example working website here:
-
 https://waba-tron.github.io/Guess-The-Number-Game/Hi-lo.html
 
 ## Installation
