@@ -1,28 +1,81 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
+let msg = document.querySelector('.final-output');
 
 function guessNumber() {
   //Collect input from the user
   let guess = document.querySelector(".inputs-Values").value;
 
+  let msg  = document.querySelector(".final-output");
+  // let guesses = document.getElementById(".final-output");
+  if(guess != randomNumber){
+   msg.textContent = "Guess is wrong.";
+  }else{
+    msg.textContent = `You win the number was ${randomNumber}`;
+  }
+
+
+///This is jons test!!!!!
+
+ }
+  
+  
+
+
+///This is jons test!!!!!
+
+  
+  
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
 
+  if (guess === '' || guess > 100 || guess < 1) {
+    msg.textContent = 'Please enter a number between 1 and 100'; //Liew
+  } 
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
 
-  //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
+  else if(guess > randomNumber){   
+     msg.textContent = '😢 Number is too high';//jon
 
   //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
+
 }
+   
+  //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
+  
+//   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
+ 
+//   //If the user has guessed the random number correctly print out the randomNumber with a message "Guess is correct. You win!"
+//   
+
+ 
+
 
 // For this task we will be making a "New Game" button function which will reset our game,
 // Once the user clicks on this button the user will have new random number to guess
 // 1. Reset the values inside the body of the function
 // 2. Attach our new game button using an event listener to the .btnNewGame button
+
+
+
 function newGame() {
+
+
+   let guess = document.querySelector(".inputs-Values").value = " "; //Fatimoh
+   msg.textContent = 'Guess a number between 1 and 100'; //Liew
+   randomNumber = Math.floor(Math.random()*100) + 1;
+ }; 
+
+
+
+
   //Your code here
   //Reset randomNumber
   //Reset users input field
   //Reset tries, and triesTaken by the user
-}
+
+
+  //Reset message to default
+  
+
 
 //keyboard exception
 function keyBoardEvents(e) {
@@ -30,6 +83,6 @@ function keyBoardEvents(e) {
     guessNumber();
   }
 }
-
+document.querySelector('.btnNewGame').addEventListener('click', newGame);//jon
 document.querySelector(".btnGuess").addEventListener("click", guessNumber);
 document.addEventListener("keypress", keyBoardEvents);
