@@ -17,6 +17,7 @@ function guessNumber() {
 // Once the user clicks on this button the user will have new random number to guess
 // 1. Reset the values inside the body of the function
 // 2. Attach our new game button using an event listener to the .btnNewGame button
+
 function newGame() {
   //Your code here
   //Reset randomNumber
