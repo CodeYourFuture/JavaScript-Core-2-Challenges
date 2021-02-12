@@ -1,3 +1,4 @@
+
 function calculateWords(chapterOfABook) {
   const wordCount = {};
 
