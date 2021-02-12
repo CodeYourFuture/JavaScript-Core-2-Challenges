@@ -1,5 +1,70 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Chivo:900i|Muli|Titillium+Web" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <title>Fastest Presser Game</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="start-game-container">
+      <h1>Fastest Presser</h1>
+      <input id="seconds-input" class="shadow border-0 p-1" type="number" placeholder="Set seconds" min="1" />
+      <h6 class="m-2 d-none" id="time-remaining-header">
+        Time remaining:
+        <span id="time-remaining" class="text-danger"></span>
+      </h6>
+      <div class="game-btns-container">
+        <button id="start-game-btn" class="btn btn-success p-2 m-3 shadow">
+          Start game
+        </button>
+        <button id="reset-game-btn" class="btn btn-primary p-2 m-3 shadow d-none">
+          Reset game
+        </button>
+      </div>
+    </div>
+    <div id="key-container" class="row text-center border">
+      <div class="col-6 p-4">
+        <h2>Press S</h2>
+        <p id="player-s-score"></p>
+      </div>
+      <div class="col-6 p-4 border-left">
+        <h2>Press L</h2>
+        <p id="player-l-score"></p>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+<script src="script.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
   <head>
     <link
       href="https://fonts.googleapis.com/css?family=Chivo:900i|Muli|Titillium+Web"
@@ -20,4 +85,4 @@
   </body>
 
   <script src="script.js"></script>
-</html>
+</html> -->

@@ -13,6 +13,13 @@ function calculateWords(chapterOfABook) {
     }
   });
 
+  //function countW(str) {
+//  for (let i = 0; i < countWord.length; i++){
+//     if (countWord[i] in wordCount) 
+//     {wordCount[countWord][i] += 1
+//     }else {wordCount[countWord][i] === 1}
+//     }
+    //}
   return wordCount;
 }
 
