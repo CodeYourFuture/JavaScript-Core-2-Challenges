@@ -5,29 +5,18 @@ function calculateWords( chapterOfABook){
   
   for ( var i = 0; i < words.length; i++ )
   {
-    if ( words !== "" )
+    if ( words[i] !== "" )
     {
       
-    
-      if ( wordCount[words] === undefined )
+     if ( wordCount[words[i]] === undefined )
       {
-        wordCount[words] = 1;
+        wordCount[words[i]] = 1;
       } else
       {
-        wordCount[words]++;
+        wordCount[words[i]]++;
       }
     }
   }
-    
-
-  /*var cleanLetters = wordCount.filter( function ( letter )
-   {
-     return punctuation.indexOf( letter ) === -1;
-     var cleanString = cleanLetters.join( '' );
-     // Write your code in here*
- 
-     
-  } );*/
    
   return wordCount;
 }
