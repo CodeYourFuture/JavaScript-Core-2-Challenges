@@ -3,6 +3,17 @@ function calculateWords(chapterOfABook) {
 
   // Write your code in here
 
+  let counting = chapterOfABook.split(" ");
+
+  counting.forEach((word) => {
+    if (word !== "") {
+      if (wordCount[word] === undefined) {
+        wordCount[word] = 1;
+      } else {
+        wordCount[word] += 1;
+      }
+    }
+  });
 
   return wordCount;
 }
