@@ -12,7 +12,7 @@ function calculateWords(chapterOfABook) {
       }
     }
   });
-
+  console.log("test", wordCount)
   return wordCount;
 }
 
