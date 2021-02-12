@@ -1,7 +1,19 @@
 function calculateWords(chapterOfABook) {
   const wordCount = {};
 
-  // Write your code in here
+  // create substrings + place into array
+  let splitString = chapterOfABook.split(" ");
+
+  splitString.forEach((word) => {
+    // so long as string isn't empty...
+    if (word !== "") {
+      if (wordCount[word] === undefined) {
+        wordCount[word] = 1;
+      } else {
+        wordCount[word] += 1;
+      }
+    }
+  });
 
   return wordCount;
 }
