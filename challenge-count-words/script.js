@@ -2,7 +2,17 @@ function calculateWords(chapterOfABook) {
   const wordCount = {};
 
   // Write your code in here
+  let oneWord = chapterOfABook.split(' ');
 
+  oneWord.forEach(word => {
+    if (word !== '') {
+      if (wordCount[word] === undefined) {
+        wordCount[word] = 1;
+      } else {
+        wordCount[word]++;
+      }
+    }
+  });
   return wordCount;
 }
 
@@ -27,8 +37,13 @@ test("Code works for a small string", calculateWords("I love CodeYourFuture"), {
 
 test(
   "A string with, some punctuation",
-  calculateWords("A string with, some punctuation"),
-  { A: 1, string: 1, "with,": 1, some: 1, punctuation: 1 }
+  calculateWords("A string with, some punctuation"), {
+    A: 1,
+    string: 1,
+    "with,": 1,
+    some: 1,
+    punctuation: 1
+  }
 );
 
 test("Empty string", calculateWords(""), {});
