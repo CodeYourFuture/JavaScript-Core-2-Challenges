@@ -1,24 +1,24 @@
 # Guess-The-Number-Game
+  
+ ##  Explanation
+  
+  The player will guess a random number between 1 and 100. They have a certain number of tries to guess the correct number.
+  
+If   they guess the number within the number tries then they win, otherwise they lose.
+    
+    More d  etails for the implementation of this challenge can be found in `script.js`
+      
+  ### Ex    ample Result
+        
+       You can  find an example working website here:
+      
+  https://      waba-tron.github.io/Guess-The-Number-Game/Hi-lo.html
+      
+   ## I nstallation
+  
+ Fo rk this repository and then open in VSCode. To view the website, open index.html in a browser.
 
-## Explanation
-
-The player will guess a random number between 1 and 100. They have a certain number of tries to guess the correct number.
-
-If they guess the number within the number tries then they win, otherwise they lose.
-
-More details for the implementation of this challenge can be found in `script.js`
-
-### Example Result
-
-You can find an example working website here:
-
-https://waba-tron.github.io/Guess-The-Number-Game/Hi-lo.html
-
-## Installation
-
-Fork this repository and then open in VSCode. To view the website, open index.html in a browser.
-
-## Prior Knowledge
+  ## Prior Knowledge
 
 Students must understand
 
@@ -36,6 +36,7 @@ If the user guesses the random number within the number of tries, print 'It took
 
 ### Let The Player Lose
 
-Lets make our application a little cooler, incorporate a 'tries' functionality, where a user only has certain number of tries to guess the number.
-
-If the user were to exceed the number of tries the print out a message print 'You Lose, the number was ' + randomNumber;
+  Lets make our application a little cooler, incorporate a 'tries' functionality, where a user only has certain number of tries to guess the number.
+  
+ If  the user were to exceed the number of tries the print out a message print 'You Lose, the number was ' + randomNumber;
+                                                                
